@@ -76,7 +76,7 @@ export default function CustomizedTables() {
         return "rgba(255, 0, 0, 0.7) !important";
 
       default:
-        return "rgba(128, 128, 128, 0.2) !important";
+        return "rgba(128, 128, 128, 0.19) !important";
     }
   };
 
