@@ -6,7 +6,7 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
   (config) => {
-    config.headers.Authorization = `Bearer YqdvjaNSFWViOQ6jjx6rKz2Igpl8fSss`;
+    config.headers.Authorization = `Bearer 0cOq2zQNG1gW4Fsy4kYLG7_YMBzrz5bu`;
 
     return config;
   },
