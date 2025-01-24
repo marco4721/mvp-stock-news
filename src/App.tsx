@@ -53,7 +53,7 @@ export default function CustomizedTables() {
   const { data: { results: news } = {}, isLoading } = useGetNews({
     ticker: selectedStock?.symbol || "",
   });
-  const { data: tickers } = useGetTickers({
+  const { data: tickers, isFetching } = useGetTickers({
     ticker: debouncedValue.toUpperCase(),
   });
 
@@ -68,7 +68,6 @@ export default function CustomizedTables() {
   }, [filterText]);
 
   const getSentimentColor = (sentiment: New["sentiment"]) => {
-    console.log(sentiment);
     switch (sentiment) {
       case "positive":
         return "rgba(0, 128, 0, 0.7) !important";
@@ -85,6 +84,7 @@ export default function CustomizedTables() {
       <Autocomplete
         id="free-solo-demo"
         filterOptions={(x) => x}
+        loading={isFetching}
         options={tickers || []}
         getOptionLabel={({ name }) => name}
         onChange={(_, value) => setSelectedStock(value)}
